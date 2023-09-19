@@ -4,13 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        // This takes input from the user to choose the number that they're going to guess.
-        Console.WriteLine("What is your Magic Number? ");
-        int magicNumber = int.Parse(Console.ReadLine());
+        // This makes a new random number
+        Random rnd = new Random();
+        int magicNumber = rnd.Next(20);
 
         // This sets the current guess equal to zero and tests to see if the current guess
         // equals the magic number.
-        int currentGuess = 0;
+        int currentGuess = -1;
         while (currentGuess != magicNumber){
             // This asks the user for their guess.
             Console.WriteLine("Guess a number! ");
