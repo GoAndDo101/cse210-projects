@@ -37,7 +37,7 @@ class Program
         int remainder = userGrade % 10; 
 
         // determine if the grade is an A or an F in which it wouldnt need the plus and minus
-        if (userGrade < 90 && userGrade > 60){
+        if (userGrade < 95 && userGrade > 60){
             if(remainder >= 7){
                 sign = "+";
             } else if (remainder <= 3){
