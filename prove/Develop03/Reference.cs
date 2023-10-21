@@ -1,6 +1,6 @@
 class Reference{
 
-    public string _book;
+    private string _book;
 
     private string _chapter;
 
