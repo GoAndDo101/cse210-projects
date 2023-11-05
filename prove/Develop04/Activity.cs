@@ -37,7 +37,7 @@ class Activity{
     }
 
     public void Countdown(){
-        for(int i = 5; i <= 0; i -= 1){
+        for(int i = 5; i > 0; i -= 1){
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
