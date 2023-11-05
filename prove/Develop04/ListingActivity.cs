@@ -1,4 +1,5 @@
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 class ListingActivity : Activity{
@@ -14,6 +15,7 @@ class ListingActivity : Activity{
     }
 
     public void Run(){
+        Console.WriteLine(_questions);
         Console.WriteLine("Get Ready...");
         Countdown();
         Console.WriteLine("List as many responses as you can to the following prompt: ");
@@ -25,9 +27,10 @@ class ListingActivity : Activity{
 
         while (startTime < futureTime){
             string Response = Console.ReadLine();
-            Console.WriteLine(Response);
             _responses.Add(Response);
         }
+
+        Console.Clear();
 
         foreach(string response in _responses){
             Console.WriteLine(response);
@@ -35,8 +38,8 @@ class ListingActivity : Activity{
     }
 
     public ListingActivity(){
-        List<string> _questions = new List<string>();
-        List<string> _responses = new List<string>();
+        _questions = new List<string>();
+        _responses = new List<string>();
         _questions.Add("Who are people that you appreciate?");
         _questions.Add("What are personal strengths of yours?");
         _questions.Add("Who are people that you have helped this week?");
