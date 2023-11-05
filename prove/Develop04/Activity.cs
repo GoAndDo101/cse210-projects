@@ -11,8 +11,6 @@ class Activity{
 
     private string _description;
 
-    private List<string> _animation;
-
     //Methods
     public void Prepare(){
         DisplayStartMessage();
@@ -39,32 +37,26 @@ class Activity{
     }
 
     public void Countdown(){
-        Console.Write("5... ");
-        Thread.Sleep(1000);
-        Console.Write("4... ");
-        Thread.Sleep(1000);
-        Console.Write("3... ");
-        Thread.Sleep(1000);
-        Console.Write("2... ");
-        Thread.Sleep(1000);
-        Console.Write("1... ");
-        Thread.Sleep(1000);
-        Console.Write("0... ");
-        Thread.Sleep(1000);
-        Console.WriteLine();
+        for(int i = 5; i <= 0; i -= 1){
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
     public void DisplayAnimation(){
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
-
-        while(startTime < futureTime)
-            Console.Write("+");
+        List<string> frames = new List<string>();
+        frames.Add("+");
+        frames.Add("-");
+        frames.Add("0");
+        frames.Add("-");
+        frames.Add("+");
+        
+        foreach (string frame in frames){
+            Console.Write(frame);
             Thread.Sleep(500);
             Console.Write("\b \b");
-            Console.Write("-");
-            Thread.Sleep(500);
-            Console.Write("\b \b");
+        }
     }
     //Getters and Setters
 

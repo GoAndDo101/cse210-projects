@@ -17,7 +17,7 @@ class ListingActivity : Activity{
     public void Run(){
         Console.WriteLine(_questions);
         Console.WriteLine("Get Ready...");
-        Countdown();
+        DisplayAnimation();
         Console.WriteLine("List as many responses as you can to the following prompt: ");
         DisplayPrompt();
         Console.WriteLine("You may begin in: ");
@@ -32,9 +32,9 @@ class ListingActivity : Activity{
 
         Console.Clear();
 
-        foreach(string response in _responses){
-            Console.WriteLine(response);
-        }
+        Console.WriteLine("You gave " + _responses.Count() + " reponse(s)");
+        DisplayEndMessage();
+        DisplayAnimation();
     }
 
     public ListingActivity(){
@@ -46,11 +46,13 @@ class ListingActivity : Activity{
         _questions.Add("When have you felt the Holy Ghost this month?");
         _questions.Add("Who are some of your personal heroes?");
 
-
         setTitle("Listing Activity");
         setStartMessage("Welcome to the " + getTitle());
         setDesc("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
         setEndMessage("Well Done!!! \n \n You have completed another " + getStrDuration() + " seconds of the Listing Activity!");
+
+        Prepare();
+        Run();
     }
 
 
