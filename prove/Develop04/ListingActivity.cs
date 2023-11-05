@@ -28,6 +28,7 @@ class ListingActivity : Activity{
         while (startTime < futureTime){
             string Response = Console.ReadLine();
             _responses.Add(Response);
+            startTime = DateTime.Now;
         }
 
         Console.Clear();
@@ -49,7 +50,9 @@ class ListingActivity : Activity{
         setTitle("Listing Activity");
         setStartMessage("Welcome to the " + getTitle());
         setDesc("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
-        setEndMessage("Well Done!!! \n \n You have completed another " + getStrDuration() + " seconds of the Listing Activity!");
+        int integer = getIntDuration();
+        string LocalDur = integer.ToString();
+        setEndMessage("Well Done!!! \n \n You have completed another " + LocalDur + " seconds of the Listing Activity!");
 
         Prepare();
         Run();

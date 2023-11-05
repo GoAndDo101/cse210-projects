@@ -1,7 +1,7 @@
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 
-class BreathingActivity : Activity{
+class HyperventilationActivity : Activity{
     public void Breathe(){
         Console.WriteLine("Get ready...");
         DisplayAnimation();
@@ -13,9 +13,7 @@ class BreathingActivity : Activity{
 
         while(startTime < futureTime){
             Console.WriteLine("Breathe In...");
-            Countdown();
             Console.WriteLine("Breathe Out... ");
-            Countdown();
             startTime = DateTime.Now;
         }
         DisplayEndMessage();
@@ -23,13 +21,13 @@ class BreathingActivity : Activity{
 
 
 
-    public BreathingActivity(){
-        setTitle("Breathing Activity");
+    public HyperventilationActivity(){
+        setTitle("Hyperventilation Activity");
         setStartMessage("Welome to the " + getTitle());
-        setDesc("This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing");
+        setDesc("This activity will skyrocket your anxiety and might even make you pass out!");
         int integer = getIntDuration();
         string LocalDur = integer.ToString();
-        setEndMessage("Well Done!!! \n \n You have completed another " + LocalDur + " seconds of the breathing activity.");
+        setEndMessage("Well Done!!! \n \n You have completed another " + LocalDur + " seconds of the hyperventilation activity.");
 
         Prepare();
         Breathe();
