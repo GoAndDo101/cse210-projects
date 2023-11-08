@@ -20,7 +20,7 @@ class Program
         //This function asks the user for their favorite number
         static int PromptUserNumber(){
             Console.WriteLine("Please Enter Your Favorite Number");
-            int favNum = int.Parse(Console.ReadLine());
+            int favNum = 2;
             return favNum;
 
         }
