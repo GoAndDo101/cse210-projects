@@ -40,7 +40,7 @@ class ChecklistGoal : Goal{
 
     public override string GetStringRepresentation()
     {
-        string StringRep = $"{GetTheType()}||{GetTitle()}||{GetDescription()}||{GetPoints()}||{_completed}||{_timesCompleted}||{_totalNeeded}||{_fullyCompletePoints}";
+        string StringRep = $"{GetTheType()}||{GetTitle()}||{GetDescription()}||{GetPoints()}||{_timesCompleted}||{_totalNeeded}||{_fullyCompletePoints}";
         return StringRep;
     }
 
@@ -70,6 +70,7 @@ class ChecklistGoal : Goal{
     }
 
     public ChecklistGoal(){
+        SetType("Checklist");
         GetUserGoal();
     }
 }

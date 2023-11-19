@@ -49,8 +49,6 @@ class Program
                         break;
                 }
             }
-
-
         }
 
         void Load(){
@@ -65,10 +63,11 @@ class Program
                     SimpleGoal simpleGoal = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]), bool.Parse(parts[4]));
                     TempGoals.Add(simpleGoal);
                 } else if(parts[0] == "Checklist"){
-                    ChecklistGoal checklistGoal = new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[5]));
+                    ChecklistGoal checklistGoal = new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[5])); 
                     TempGoals.Add(checklistGoal);
                 }
             }
+            user.SetPoints(int.Parse(lines[0]));
             user.SetGoals(TempGoals);
         }
 

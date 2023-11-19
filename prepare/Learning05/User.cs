@@ -39,6 +39,10 @@ class User{
         currentLevel = GetLevel();
     }
 
+    public void SetPoints(int points){
+        _pointTotal = points;
+    }
+
     public void SetGoals(List<Goal> goals){
         _goals = goals;
     }
@@ -48,6 +52,7 @@ class User{
     }
 
     public void ListGoals(){
+        Console.WriteLine(GetLevel());
         foreach(Goal goal in _goals){
             Console.WriteLine(goal.DisplayGoal());
         }

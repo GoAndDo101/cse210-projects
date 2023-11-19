@@ -3,15 +3,15 @@ using System.IO;
 using System.Diagnostics.Contracts;
 
 class SimpleGoal : Goal{
-    private bool _complete;
 
     public override void Complete(User user){
         Console.WriteLine("You completed this goal!");
         user.AddPoints(GetPoints());
+        SetComplete(true);
     }
 
     public override string GetStringRepresentation(){
-        string StringRep = $"{GetTheType()}||{GetTitle()}||{GetDescription()}||{GetPoints()}||{_complete}";
+        string StringRep = $"{GetTheType()}||{GetTitle()}||{GetDescription()}||{GetPoints()}||{isComplete()}";
         return StringRep;
     }
 
@@ -28,14 +28,15 @@ class SimpleGoal : Goal{
     }
 
     public SimpleGoal(){
+        SetType("Simple");
         GetUserGoal();
-        _complete = false;
+        SetComplete(false);
     }
     public SimpleGoal(string title, string description, int points, bool complete){
         SetTitle(title);
         SetDescription(description);
         SetPoints(points);
-        _complete = complete;
+        SetComplete(complete);
         SetType("Simple");
     }
 }

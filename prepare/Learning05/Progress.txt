@@ -1,4 +1,2 @@
-200
-||Read my scriptures||read em a lot||100||1
-||ligma||balls||100||False
-||lgima||valls||10||False||0||10||200
+0
+Eternal||ligma||balls||100||0

@@ -8,6 +8,7 @@ class EternalGoal : Goal{
         Console.WriteLine("You Completed " + GetTitle());
         user.AddPoints(GetPoints());
         _timesCompleted += 1;
+        SetComplete(true);
     }
 
     public override string GetStringRepresentation(){
@@ -26,6 +27,7 @@ class EternalGoal : Goal{
     }
 
     public EternalGoal(){
+        SetType("Eternal");
         GetUserGoal();
     }
 
